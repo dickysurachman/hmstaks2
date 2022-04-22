@@ -29,11 +29,9 @@ public class loginsuccess extends AppCompatActivity implements  View.OnClickList
     public static final String Gambar = "Picture";
     public static final String Email1 = "Email";
     private Context context;
-    private static final int GET_BY_CROP = 804;
-    private static final int GET_BY_ALBUM1 = 801;
-    private static final int GET_BY_CAMERA = 805;
+
     List<String> mPermissionList = new ArrayList<>();
-    String[] permissions = new String[] {Manifest.permission.READ_PHONE_STATE,
+    String[] permissions = new String[] {Manifest.permission.ACCESS_WIFI_STATE, Manifest.permission.READ_PHONE_STATE,
             Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION,
             Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE};
     private final int mRequestCode = 100;
@@ -104,7 +102,7 @@ public class loginsuccess extends AppCompatActivity implements  View.OnClickList
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.maps:
-                Toast.makeText(loginsuccess.this, "Please wait for download sample", Toast.LENGTH_LONG)
+                Toast.makeText(loginsuccess.this, "Please wait it's take a few moment", Toast.LENGTH_LONG)
                         .show();
                 Intent goto3 = new Intent(loginsuccess.this,maps.class);
                 startActivity(goto3);
