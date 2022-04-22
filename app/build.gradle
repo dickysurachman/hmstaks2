@@ -18,7 +18,7 @@ android {
 
     signingConfigs {
         config {
-            storeFile file('C:/task1/hms2/upload_certificate.pem')
+            storeFile file('C:/task1/hms2/task2.jks')
             storePassword '123456'
             keyPassword '123456'
             keyAlias 'key0'

@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -23,7 +24,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class loginsuccess extends AppCompatActivity {
+public class loginsuccess extends AppCompatActivity implements  View.OnClickListener {
     public static final String Name = "Name";
     public static final String Gambar = "Picture";
     public static final String Email1 = "Email";
@@ -103,14 +104,21 @@ public class loginsuccess extends AppCompatActivity {
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.maps:
-                getByAlbum(LoginSuccess.this, GET_BY_CROP);
+                Toast.makeText(loginsuccess.this, "Please wait for download sample", Toast.LENGTH_LONG)
+                        .show();
+                Intent goto3 = new Intent(loginsuccess.this,maps.class);
+                startActivity(goto3);
                 break;
             case R.id.imagekit2:
-                Toast.makeText(LoginSuccess.this, "Please wait for download sample", Toast.LENGTH_LONG)
-                        .show();
-                Intent intent4 = new Intent(LoginSuccess.this, imagekit.class);
-                intent4.putExtra(imagekit.gambarcon,"https://www.intiwhiz.com/themenew/img/slide/1.jpg");
-                startActivity(intent4);
+                String uriString = "petalmaps://nearbySearch?text=" + "Puskesmas"+"&utm_source="+"fb";
+                Uri content_url = Uri.parse(uriString);
+                Intent intent = new Intent(Intent.ACTION_VIEW, content_url);
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(loginsuccess.this, "Please install Petal Maps first", Toast.LENGTH_LONG)
+                            .show();
+                }
                 break;
         }
     }
