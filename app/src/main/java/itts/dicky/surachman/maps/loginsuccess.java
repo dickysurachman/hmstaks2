@@ -108,15 +108,19 @@ public class loginsuccess extends AppCompatActivity implements  View.OnClickList
                 startActivity(goto3);
                 break;
             case R.id.imagekit2:
-                String uriString = "petalmaps://nearbySearch?text=" + "Puskesmas"+"&utm_source="+"fb";
-                Uri content_url = Uri.parse(uriString);
-                Intent intent = new Intent(Intent.ACTION_VIEW, content_url);
-                if (intent.resolveActivity(getPackageManager()) != null) {
-                    startActivity(intent);
-                } else {
-                    Toast.makeText(loginsuccess.this, "Please install Petal Maps first", Toast.LENGTH_LONG)
-                            .show();
-                }
+                String url = "https://www.petalmaps.com/search/puskesmas";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+                //String uriString = "petalmaps://nearbySearch?text=" + "Puskesmas"+"&utm_source="+"fb";
+                //Uri content_url = Uri.parse(uriString);
+                //Intent intent = new Intent(Intent.ACTION_VIEW, content_url);
+                //if (intent.resolveActivity(getPackageManager()) != null) {
+                //    startActivity(intent);
+                //} else {
+                //    Toast.makeText(loginsuccess.this, "Please install Petal Maps first", Toast.LENGTH_LONG)
+                //            .show();
+               // }
                 break;
         }
     }
