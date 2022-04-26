@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
                     // Check the details in this FAQ.
                     //signInIntent.putExtra(CommonConstant.RequestParams.IS_FULL_SCREEN, true);
                     startActivityForResult(signInIntent, REQUEST_CODE_SIGN_IN);
-                    Toast.makeText(getApplicationContext(), "Error Login " ,Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getApplicationContext(), "Error Login " ,Toast.LENGTH_SHORT).show();
                 }
             }
         });
