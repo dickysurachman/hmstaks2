@@ -140,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        sign1=false;
         setContentView(R.layout.activity_main);
         findViewById(R.id.loadingPanel).setVisibility(View.GONE);
         findViewById(R.id.HuaweiIdAuthButton).setOnClickListener(new View.OnClickListener() {
